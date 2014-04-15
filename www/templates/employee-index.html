@@ -1,0 +1,28 @@
+<view title="'Find-A-Dentist'">
+
+    <div class="bar bar-subheader item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios7-search placeholder-icon"></i>
+            <input id="searchKey" type="search" placeholder="Filter" ng-model="searchKey" autocorrect="off" >
+              <button class="button button-clear" ng-click="clearSearch()">X</button>
+        </label>
+        <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input id="searchServer" type="search" placeholder="search server zipcode" ng-model="zipcode" autocorrect="off">
+        </label>
+        <button class="button button-clear" ng-click="search()">Search</button>
+    </div>
+
+    <content has-header="true" has-subheader="true">
+        <!--{{dentists}}-->
+
+        <list>
+            <item ng-repeat="dentist in dentists| filter:searchKey" type="item-text-wrap" href="#/employee/{{dentist._id}}">
+                <h3>{{dentist.DentistName}} / {{dentist.OfficeName}}</h3>
+                <p>{{dentist.Address}} - {{dentist.City}}- {{dentist.State}}- {{dentist.ZipCode}}- {{dentist.Phone}}</p>
+            </item>
+            </item>
+        </list>
+    </content>
+
+</view>

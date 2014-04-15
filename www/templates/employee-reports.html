@@ -1,0 +1,13 @@
+<view title="'Direct Reports'">
+
+    <content has-header="true">
+        <list>
+            <item ng-repeat="dentist in dentists| filter:searchKey" type="item-text-wrap" href="#/employee/{{dentist._id}}">
+                <h3>{{dentist.DentistName}} / {{dentist.OfficeName}}</h3>
+                <p>{{dentist.Address}} - {{dentist.City}}- {{dentist.State}}- {{dentist.ZipCode}}-{{dentist.Phone}}</p>
+            </item>
+            </item>
+        </list>
+    </content>
+
+</view>
